@@ -583,6 +583,25 @@ footer {
 .columna-footer-fija ul li a:hover {
     color: var(--color-secundario);
 }
+/* 1. Forza a los títulos de las tarjetas a usar el Azul Profundo Institucional */
+.tarjeta-corporativa h3 a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* 2. Aplica el Dorado Satinado a los tildes de forma automática y sutil */
+.tarjeta-corporativa ul li {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* Forzado estético para aislar el símbolo del tilde (check) */
+.tarjeta-corporativa ul li::first-letter {
+    color: var(--color-secundario);
+    font-weight: 600;
+}
 
 /* ==========================================================================
    RESPONSIVIDAD Y ADAPTACIÓN MÓVIL (MEDIA QUERIES)
