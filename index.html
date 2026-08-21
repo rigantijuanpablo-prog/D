@@ -77,23 +77,22 @@ header {
     height: 100%;
 }
 
-.marca-estudio:hover {
-    opacity: 0.85; 
-}
-
+/* Modificación para que el logo flote agrandado sin empujar el tamaño de los textos */
 .logo-premium {
-    /* Agrandado un mínimo para destacar la estructura del blasón */
-    height: 56px;        
+    height: 56px;        /* Mantiene el tamaño imponente del blasón dorado */
     width: auto;         
     object-fit: contain; 
-    
-    /* FILTRO AVANZADO: Elimina el fondo blanco de raíz y rescata el dorado tridimensional */
-    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.1);
-    mix-blend-mode: screen;
-    
-    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
+    border-right: 1px solid rgba(197, 168, 128, 0.25); 
     padding-right: 20px;
     display: block;
+}
+
+/* Forzamos que el bloque de textos mantenga su estructura original compacta */
+.nombre-estudio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;        /* Restringe la altura máxima del bloque de texto */
 }
 
 
@@ -742,13 +741,12 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD TOTALMENTE OPTIMIZADO -->
-     <!-- CONTENEDOR DE IDENTIDAD -->
+<!-- CONTENEDOR DE IDENTIDAD 100% FIEL AL ORIGINAL -->
         <a href="#" class="marca-estudio">
-            <!-- Llamado a la imagen del logo -->
+            <!-- Tu logo original con textura 3D en alta definición y transparencia real -->
             <img src="3cucharas-logo.png" alt="Logo RGM" class="logo-premium">
             
-            <!-- Estructura de apellidos -->
+            <!-- Estructura limpia de apellidos en blanco puro -->
             <div class="nombre-estudio">
                 <span class="apellido-principal">RIGANTI, GEILER</span>
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
