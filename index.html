@@ -83,12 +83,14 @@ header {
 
 /* Reemplazamos .sigla-premium por los estilos del nuevo logo svg incrustado */
 .logo-premium {
-    height: 44px; /* Ajuste de altura ideal para equilibrar con las dos líneas de nombres */
-    width: 64px;  /* Le damos el ancho necesario para que el vector respire de forma armoniosa */
-    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Mantenemos la línea divisoria vertical */
+    height: 46px;      /* Altura perfecta en eje con el texto */
+    width: auto;       /* Mantiene la proporción original del dibujo */
+    object-fit: contain;
+    border-right: 1px solid rgba(197, 168, 128, 0.25);
     padding-right: 20px;
     display: block;
 }
+
 
 .nombre-estudio {
     display: flex;
@@ -733,21 +735,10 @@ footer {
 <body>
  
     <header>
-    <!-- CONTENEDOR DE IDENTIDAD MINIMALISTA TOTALMENTE ARMONIZADO -->
+<!-- CONTENEDOR DE IDENTIDAD MINIMALISTA TOTALMENTE ARMONIZADO -->
         <a href="#" class="marca-estudio">
-            <!-- Código del logo inyectado de forma nativa para evitar bloqueos del servidor -->
-            <svg class="logo-premium" xmlns="http://w3.org" viewBox="0 0 100 100">
-              <g fill="none" stroke="#c5a880" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Cuchara Superior -->
-                <path d="M 50 12 C 42 12 42 35 48 45 L 50 58 L 52 45 C 58 35 58 12 50 12 Z" />
-                <!-- Cuchara Izquierda -->
-                <path d="M 18 72 C 12 66 30 58 40 61 L 52 52 L 42 63 C 32 70 24 78 18 72 Z" />
-                <!-- Cuchara Derecha -->
-                <path d="M 82 72 C 88 66 70 58 60 61 L 48 52 L 58 63 C 68 70 76 78 82 72 Z" />
-                <!-- Cruce Central -->
-                <path d="M 46 51 L 54 51" />
-              </g>
-            </svg>
+            <!-- Cargamos el archivo SVG original con degradado usando la ruta absoluta del repositorio -->
+            <img src="logo-cucharas.svg" alt="Logo RGM" class="logo-premium">
             
             <!-- Estructura limpia de apellidos en blanco puro -->
             <div class="nombre-estudio">
@@ -755,6 +746,7 @@ footer {
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
             </div>
         </a>
+
 
         <!-- NUEVO: Botón Hamburguesa Estructurado -->
         <button class="boton-hamburguesa" aria-label="Abrir menú de navegación">
