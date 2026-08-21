@@ -81,16 +81,13 @@ header {
     opacity: 0.85;
 }
 
-.sigla-premium {
-    font-family: var(--fuente-titulos);
-    color: var(--color-secundario) !important;
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    border-right: 1px solid rgba(197, 168, 128, 0.25);
+/* Reemplazamos .sigla-premium por los estilos del nuevo logo svg incrustado */
+.logo-premium {
+    height: 44px; /* Ajuste de altura ideal para equilibrar con las dos líneas de nombres */
+    width: 64px;  /* Le damos el ancho necesario para que el vector respire de forma armoniosa */
+    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Mantenemos la línea divisoria vertical */
     padding-right: 20px;
-    line-height: 1;
-    user-select: none;
+    display: block;
 }
 
 .nombre-estudio {
