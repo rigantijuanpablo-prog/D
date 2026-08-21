@@ -1,0 +1,62 @@
+<svg xmlns="http://w3.org" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Degradado metálico sutil para simular el brillo dorado pulido -->
+    <linearGradient id="doradoPremium" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b39266" />
+      <stop offset="30%" stop-color="#e2cfb4" />
+      <stop offset="70%" stop-color="#c5a880" />
+      <stop offset="100%" stop-color="#997a50" />
+    </linearGradient>
+    
+    <!-- Filtro de sombra suave para darle volumen al integrarse en la web -->
+    <filter id="sombraSuave" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#sombraSuave)">
+    <!-- Cucharita Superior (Vértice) -->
+    <path d="M 250 80 
+             C 215 80, 215 170, 240 210 
+             L 242 275 
+             L 258 275 
+             L 260 210 
+             C 285 170, 285 80, 250 80 Z" 
+          fill="none" 
+          stroke="url(#doradoPremium)" 
+          stroke-width="12" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <!-- Cucharita Inferior Izquierda -->
+    <path d="M 120 370 
+             C 95 345, 175 310, 220 325 
+             L 275 285 
+             L 285 298 
+             L 232 340 
+             C 195 370, 145 395, 120 370 Z" 
+          fill="none" 
+          stroke="url(#doradoPremium)" 
+          stroke-width="12" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Cucharita Inferior Derecha -->
+    <path d="M 380 370 
+             C 405 345, 325 310, 280 325 
+             L 225 285 
+             L 215 298 
+             L 268 340 
+             C 305 370, 355 395, 380 370 Z" 
+          fill="none" 
+          stroke="url(#doradoPremium)" 
+          stroke-width="12" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Detalles del nudo del triángulo central abstracta (Líneas de cruce) -->
+    <path d="M 235 240 L 265 240" fill="none" stroke="url(#doradoPremium)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 220 290 L 235 260" fill="none" stroke="url(#doradoPremium)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 280 290 L 265 260" fill="none" stroke="url(#doradoPremium)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>
