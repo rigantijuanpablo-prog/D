@@ -81,20 +81,22 @@ header {
 
 /* Modificación para nivelar el tamaño del logo y los nombres a escala armónica 1:1 */
 /* Modificación para forzar que el logo y las letras mantengan exactamente la misma escala */
+/* Configuración para el logo original en 3D sobre fondo azul oscuro */
 .logo-premium {
-    height: 38px;        /* Medida ajustada para emparejar con el alto total del bloque tipográfico */
-    width: 38px;         /* Proporción cuadrada perfecta del lienzo */
-    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Mantiene la línea divisoria vertical */
+    height: 48px;        /* Altura ideal para destacar la textura y relieve dorado */
+    width: auto;         /* Respeta la proporción idéntica del dibujo original */
+    object-fit: contain; /* Evita que la imagen se estire o se pixele */
+    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
     padding-right: 20px;
+    margin-right: 5px;
     display: block;
 }
 
-/* Nivelamos el contenedor de textos en el mismo eje horizontal exacto que el logo */
+/* Nivelamos el contenedor de textos con el nuevo tamaño del logo */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 38px;        /* Misma altura del logotipo para lograr armonía total */
 }
 
 
@@ -736,27 +738,11 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD TOTALMENTE ARMONIZADO Y FLUIDO -->
+<!-- CONTENEDOR DE IDENTIDAD 100% FIEL AL LOGO ORIGINAL -->
         <a href="#" class="marca-estudio">
-            <!-- Isotipo vectorial de alta fidelidad dibujado nativamente (Sin archivos externos ni fondos) -->
-            <svg class="logo-premium" xmlns="http://w3.org" viewBox="0 0 100 100">
-              <g fill="none" stroke="#c5a880" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Cuchara Superior (Vértice central estilizado) -->
-                <path d="M 50 14 C 41 14 41 40 48 50 L 50 72 L 52 50 C 59 40 59 14 50 14 Z" />
-                <path d="M 50 14 C 46 22 46 38 50 48" stroke-width="1.2" opacity="0.6" />
-                
-                <!-- Cuchara Inferior Izquierda -->
-                <path d="M 20 78 C 14 70 34 60 44 63 L 57 53 L 60 57 L 48 68 C 38 76 26 84 20 78 Z" />
-                <path d="M 20 78 C 24 72 38 65 46 65" stroke-width="1.2" opacity="0.6" />
-                
-                <!-- Cuchara Inferior Derecha -->
-                <path d="M 80 78 C 86 70 66 60 56 63 L 43 53 L 40 57 L 52 68 C 62 76 74 84 80 78 Z" />
-                <path d="M 80 78 C 76 72 62 65 54 65" stroke-width="1.2" opacity="0.6" />
-                
-                <!-- Nudo de cruce estructural -->
-                <path d="M 46 60 L 54 60" stroke-width="2" />
-              </g>
-            </svg>
+            <!-- Tu logo original con relieve 3D en alta definición y transparencia integrada -->
+            <img src="3cucharas-logo.png" alt="Logo RGM" class="logo-premium">
+           
             
             <!-- Estructura limpia de apellidos en blanco puro -->
             <div class="nombre-estudio">
