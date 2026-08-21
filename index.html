@@ -82,11 +82,16 @@ header {
 }
 
 .logo-premium {
-    height: 48px;        /* Altura simétrica perfecta en eje con el texto */
-    width: auto;         /* Respeta la proporción exacta de tu nuevo logo */
-    object-fit: contain; /* Evita cualquier tipo de deformación de la imagen */
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4)); /* Realza el volumen dorado */
-    border-right: 1px solid rgba(197, 168, 128, 0.25);  /* Línea divisoria vertical */
+    /* Agrandado un mínimo para destacar la estructura del blasón */
+    height: 56px;        
+    width: auto;         
+    object-fit: contain; 
+    
+    /* FILTRO AVANZADO: Elimina el fondo blanco de raíz y rescata el dorado tridimensional */
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.1);
+    mix-blend-mode: screen;
+    
+    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
     padding-right: 20px;
     display: block;
 }
@@ -738,17 +743,17 @@ footer {
  
     <header>
 <!-- CONTENEDOR DE IDENTIDAD TOTALMENTE OPTIMIZADO -->
+     <!-- CONTENEDOR DE IDENTIDAD -->
         <a href="#" class="marca-estudio">
-            <!-- Tu nuevo isotipo premium con fondo transparente en alta definición -->
+            <!-- Llamado a la imagen del logo -->
             <img src="3cucharas-logo.png" alt="Logo RGM" class="logo-premium">
             
-            <!-- Estructura limpia de apellidos en blanco puro -->
+            <!-- Estructura de apellidos -->
             <div class="nombre-estudio">
                 <span class="apellido-principal">RIGANTI, GEILER</span>
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
             </div>
         </a>
-
 
         <!-- NUEVO: Botón Hamburguesa Estructurado -->
         <button class="boton-hamburguesa" aria-label="Abrir menú de navegación">
