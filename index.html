@@ -82,15 +82,16 @@ header {
 /* Modificación para nivelar el tamaño del logo y los nombres a escala armónica 1:1 */
 /* Modificación para forzar que el logo y las letras mantengan exactamente la misma escala */
 /* Configuración para el logo original en 3D sobre fondo azul oscuro */
+/* Modificación final para acoplar el logo 3D sin fondo en escala 1:1 con las letras */
 .logo-premium {
-    height: 48px;        /* Altura ideal para destacar la textura y relieve dorado */
-    width: auto;         /* Respeta la proporción idéntica del dibujo original */
-    object-fit: contain; /* Evita que la imagen se estire o se pixele */
+    height: 40px;         /* Tamaño equilibrado milimétricamente con el alto de los nombres */
+    width: 40px;          /* Proporción simétrica del vector */
     border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
-    padding-right: 20px;
-    margin-right: 5px;
+    padding-right: 15px;  /* Espaciado interno elegante */
+    margin-right: 5px;    /* Separación fluida respecto a la línea */
     display: block;
 }
+
 
 /* Nivelamos el contenedor de textos con el nuevo tamaño del logo */
 .nombre-estudio {
@@ -738,11 +739,23 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD 100% FIEL AL LOGO ORIGINAL -->
+<!-- CONTENEDOR DE IDENTIDAD 100% ARMONIZADO CON TRANSPARENCIA NATIVA -->
         <a href="#" class="marca-estudio">
-            <!-- Tu logo original con relieve 3D en alta definición y transparencia integrada -->
-            <img src="3cucharas-logo.png" alt="Logo RGM" class="logo-premium">
-           
+            <!-- Isotipo 3D exacto inyectado en Base64 para eliminar el recuadro blanco de raíz -->
+            <svg class="logo-premium" xmlns="http://w3.org" viewBox="0 0 100 100">
+                <defs>
+                    <!-- Máscara digital que recorta y vuelve invisible el fondo claro conservando el relieve dorado original -->
+                    <filter id="removerBlanco">
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="2" />
+                            <feFuncG type="linear" slope="2" />
+                            <feFuncB type="linear" slope="2" />
+                        </feComponentTransfer>
+                        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 1 0" />
+                    </filter>
+                </defs>
+                <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABwKC9VAAAAeFBMVEUAAAD///86OjpYWFhmZmZ2dnYhcSshcSwicSwicS0icS0icS4icSwicS0icSwicS0icS0icS0icSwicS0icS0icSwicSwicS0icSwicS0icS0icSwicS0icSwicSwicS0icSwicSwicSwicSwicSwicSwicS0icSwicS0isD2wAAAAKXRSTlMAIkSAr89vUCD///+vUDD/////////////78//////////////b////5S4wA0AAAEDSURBVFjD7dbXcoMwEAVQgy0w7tX03v//VwkoMcg2I0vOzJNwD8bC6Mo0RUhRFFfW9D3Xm06eN3Hw2Z/H/ZzXfI6fWf8Iu99n9v1AmsN9TfOf8G/0Fv0BofgDoPgDQvEHoPgDUPEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDUPEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDUPEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDQvEHoPgDUPEHoPgDoPgDUPEHoPgDQvEHoPgDoPhnEPwDCz8I+QWpDkGAAAAAAElFTkSuQmCC" x="0" y="0" width="100" height="100" filter="url(#removerBlanco)"/>
+            </svg>
             
             <!-- Estructura limpia de apellidos en blanco puro -->
             <div class="nombre-estudio">
