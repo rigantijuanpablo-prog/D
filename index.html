@@ -77,15 +77,21 @@ header {
     height: 100%;
 }
 
+/* Modificación final para integrar el logo en 3D eliminando el recuadro por completo */
 .logo-premium {
-    height: 42px;         /* Altura perfecta en eje horizontal con el texto */
+    height: 42px;         /* Altura perfecta alineada en escala 1:1 con el texto */
     width: auto;          /* Mantiene la proporción simétrica exacta del dibujo */
-    object-fit: contain;  /* Evita cualquier tipo de pixelado o deformación */
+    object-fit: contain;  /* Garantiza nitidez absoluta sin deformar */
+    
+    /* FILTRO DE INVISIBILIDAD CROMÁTICA: Elimina la diferencia de tono del recuadro */
+    mix-blend-mode: color-dodge;
+    
     border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
     padding-right: 20px;
     display: block;
 }
 
+/* Forzamos que la caja tipográfica mantenga la misma altura del logo */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
@@ -734,8 +740,8 @@ footer {
  
     <header>
 <!-- CONTENEDOR DE IDENTIDAD TOTALMENTE OPTIMIZADO -->
-        <a href="#" class="marca-estudio">
-            <!-- Llamado directo a la imagen limpia con el fondo azul exacto --> 
+             <a href="#" class="marca-estudio">
+            <!-- Llamado a tu archivo original con texturas en 3D -->
             <img src="3cucharas-logo-azul.png" alt="Logo RGM" class="logo-premium">
             
             <!-- Estructura limpia de apellidos en blanco puro -->
