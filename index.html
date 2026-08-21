@@ -77,52 +77,41 @@ header {
     height: 100%;
 }
 
-/* Modificación final para integrar el logo en 3D eliminando el recuadro por completo */
-/* Creamos el logo en 3D de forma nativa por código CSS sin usar archivos de imagen */
-/* Contenedor principal alineado y con el color exacto de tu web */
+/* Contenedor principal: sin fondos extras para que use el azul nativo de tu web */
 .marca-estudio {
     display: inline-flex;
     align-items: center;
-    background-color: #040b14; /* El azul marino exacto de tu página */
     text-decoration: none;
-    padding: 10px 15px;
+    background: transparent; /* Evita que se cree un recuadro de otro color */
+    padding: 10px 0;
 }
 
-/* Integración instantánea del Isotipo PNG Transparente */
+/* El contenedor de tu imagen PNG transparente */
 .logo-premium {
-    width: 60px;  /* Ancho ideal del monograma */
-    height: 55px; /* Alto ideal del monograma */
-    /* REEMPLAZA 'tu-archivo-extraido.png' por el nombre de tu imagen optimizada */
+    width: 60px;  
+    height: 55px; 
+    /* REEMPLAZA EXACTAMENTE EL NOMBRE DE TU ARCHIVO AQUÍ */
     background-image: url('3cucharas-logo-azul-liviano.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-right: 20px;
     
-    /* Evita que los bordes del logo se pongan borrosos al hacer zoom */
+    /* Mantiene los bordes limpios en el zoom */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
 
-/* Línea divisoria vertical nativa generada por CSS */
-.logo-premium::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.25); /* Blanco sutil */
-    position: relative;
-    left: 70px; /* La posiciona justo entre el logo y el texto */
-    top: 7px;
-}
-
-/* Estructura y tipografía de los nombres */
+/* Línea divisoria nativa corregida: se genera a la derecha del contenedor del logo */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 2px;
-    margin-left: 15px; /* Espacio después de la línea divisoria */
+    
+    /* Agrega la línea vertical perfecta a la izquierda de los nombres */
+    border-left: 1px solid rgba(255, 255, 255, 0.25); 
+    padding-left: 20px; /* Distancia entre la línea y el texto */
+    margin-left: 20px;  /* Distancia entre el logo y la línea */
 }
 
 /* Apellidos principales en blanco puro */
@@ -137,7 +126,7 @@ header {
 .apellido-secundario {
     color: rgba(255, 255, 255, 0.8);
     font-size: 12.5px;
-    margin-top: 3px;
+    margin-top: 4px;
     letter-spacing: 2.5px;
 }
 
