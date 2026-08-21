@@ -736,16 +736,45 @@ footer {
  
     <header>
 <!-- CONTENEDOR DE IDENTIDAD MINIMALISTA TOTALMENTE ARMONIZADO -->
-        <a href="#" class="marca-estudio">
-            <!-- Cargamos el archivo SVG original con degradado usando la ruta absoluta del repositorio -->
-            <img src="logo-cucharas.svg" alt="Logo RGM" class="logo-premium">
-            
-            <!-- Estructura limpia de apellidos en blanco puro -->
-            <div class="nombre-estudio">
-                <span class="apellido-principal">RIGANTI, GEILER</span>
-                <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
-            </div>
-        </a>
+<a href="#" class="marca-estudio">
+    <!-- Logotipo Premium Original de Alta Fidelidad -->
+    <svg class="logo-premium" xmlns="http://w3.org" viewBox="0 0 120 120">
+      <defs>
+        <!-- Degradado metálico satinado exacto para simular el relieve en oro pulido -->
+        <linearGradient id="oroPremium" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b39266" />
+          <stop offset="30%" stop-color="#e2cfb4" />
+          <stop offset="70%" stop-color="#c5a880" />
+          <stop offset="100%" stop-color="#997a50" />
+        </linearGradient>
+      </defs>
+      <g fill="none" stroke="url(#oroPremium)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Cucharita del Vértice Superior (Definición sutil de silueta) -->
+        <path d="M 60 18 C 48 18, 48 48, 56 62 L 57 85 L 63 85 L 64 62 C 72 48, 72 18, 60 18 Z" />
+        <path d="M 60 18 C 55 25, 55 45, 60 60" stroke-width="1.5" opacity="0.7" />
+        
+        <!-- Cucharita Inferior Izquierda -->
+        <path d="M 22 92 C 14 84, 38 72, 52 76 L 70 64 L 74 68 L 57 81 C 45 90, 30 100, 22 92 Z" />
+        <path d="M 22 92 C 28 86, 45 78, 55 78" stroke-width="1.5" opacity="0.7" />
+        
+        <!-- Cucharita Inferior Derecha -->
+        <path d="M 98 92 C 106 84, 82 72, 68 76 L 50 64 L 46 68 L 63 81 C 75 90, 90 100, 98 92 Z" />
+        <path d="M 98 92 C 92 86, 75 78, 65 78" stroke-width="1.5" opacity="0.7" />
+        
+        <!-- Detalles estructurales del cruce central -->
+        <path d="M 55 72 L 65 72" stroke-width="2.5" />
+        <path d="M 51 82 L 56 75" stroke-width="2.5" />
+        <path d="M 69 82 L 64 75" stroke-width="2.5" />
+      </g>
+    </svg>
+    
+    <!-- Estructura limpia de apellidos en blanco puro -->
+    <div class="nombre-estudio">
+        <span class="apellido-principal">RIGANTI, GEILER</span>
+        <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
+    </div>
+</a>
+
 
 
         <!-- NUEVO: Botón Hamburguesa Estructurado -->
