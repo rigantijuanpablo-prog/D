@@ -78,17 +78,37 @@ header {
 }
 
 /* Modificación final para integrar el logo en 3D eliminando el recuadro por completo */
+/* Creamos el logo en 3D de forma nativa por código CSS sin usar archivos de imagen */
 .logo-premium {
-    height: 42px;         /* Altura perfecta alineada en escala 1:1 con el texto */
-    width: auto;          /* Mantiene la proporción simétrica exacta del dibujo */
-    object-fit: contain;  /* Garantiza nitidez absoluta sin deformar */
-    
-    /* FILTRO DE INVISIBILIDAD CROMÁTICA: Elimina la diferencia de tono del recuadro */
-    mix-blend-mode: color-dodge;
-    
+    height: 42px;         /* Altura perfecta en escala 1:1 con el texto */
+    width: 42px;          /* Lienzo simétrico cuadrado */
+    display: block;
     border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
     padding-right: 20px;
-    display: block;
+    margin-right: 5px;
+    position: relative;
+}
+
+/* Dibujamos la textura metálica dorada y el relieve 3D sobre la silueta exacta */
+.logo-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px; /* Espacio real del dibujo restando el padding */
+    height: 42px;
+    /* Degradado en oro pulido idéntico al render original */
+    background: linear-gradient(135deg, #b39266 0%, #e2cfb4 30%, #c5a880 70%, #997a50 100%);
+    /* Filtro de relieve e iluminación tridimensional */
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.55)) contrast(1.1);
+    
+    /* Máscara matemática que recorta el oro con la silueta exacta de las cucharitas entrelazadas */
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><g fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M 50 12 C 42 12 42 35 48 45 L 50 58 L 52 45 C 58 35 58 12 50 12 Z'/><path d='M 18 72 C 12 66 30 58 40 61 L 52 52 L 42 63 C 32 70 24 78 18 72 Z'/><path d='M 82 72 C 88 66 70 58 60 61 L 48 52 L 58 63 C 68 70 76 78 82 72 Z'/><path d='M 46 51 L 54 51'/></g></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><g fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M 50 12 C 42 12 42 35 48 45 L 50 58 L 52 45 C 58 35 58 12 50 12 Z'/><path d='M 18 72 C 12 66 30 58 40 61 L 52 52 L 42 63 C 32 70 24 78 18 72 Z'/><path d='M 82 72 C 88 66 70 58 60 61 L 48 52 L 58 63 C 68 70 76 78 82 72 Z'/><path d='M 46 51 L 54 51'/></g></svg>");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 /* Forzamos que la caja tipográfica mantenga la misma altura del logo */
@@ -98,6 +118,7 @@ header {
     justify-content: center;
     height: 42px;         /* Nivelación horizontal perfecta */
 }
+
 
 
 
@@ -739,10 +760,10 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD TOTALMENTE OPTIMIZADO -->
-             <a href="#" class="marca-estudio">
-            <!-- Llamado a tu archivo original con texturas en 3D -->
-            <img src="3cucharas-logo-azul.png" alt="Logo RGM" class="logo-premium">
+<!-- CONTENEDOR DE IDENTIDAD 100% INTEGRADO E INSTANTÁNEO -->
+        <a href="#" class="marca-estudio">
+            <!-- Este contenedor se convertirá en tu logo mediante el código CSS -->
+            <div class="logo-premium"></div>
             
             <!-- Estructura limpia de apellidos en blanco puro -->
             <div class="nombre-estudio">
@@ -750,8 +771,6 @@ footer {
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
             </div>
         </a>
-
-
 
 
         <!-- NUEVO: Botón Hamburguesa Estructurado -->
