@@ -587,14 +587,14 @@ footer {
 /* ==========================================================================
    RESPONSIVIDAD Y ADAPTACIÓN MÓVIL (MEDIA QUERIES)
    ========================================================================== */
+/* ==========================================================================
+   RESPONSIVIDAD Y ADAPTACIÓN MÓVIL (MEDIA QUERIES CON HAMBURGUESA)
+   ========================================================================== */
 @media (max-width: 992px) {
     header { 
-        padding: 20px 5%; 
-        flex-direction: column; 
-        gap: 15px; 
-    }
-    nav ul { 
-        gap: 20px; 
+        padding: 15px 5%; 
+        flex-direction: row; /* Mantiene logo e ícono alineados horizontalmente */
+        justify-content: space-between;
     }
     section { 
         padding: 100px 5%; 
@@ -609,16 +609,87 @@ footer {
     .formulario-contacto input, .formulario-contacto textarea, .boton-enviar { 
         grid-column: span 2; 
     }
- .barra-flotante-contacto {
+    .barra-flotante-contacto {
         display: none; /* Desactivado en móviles por usabilidad táctil */
     }
+
+    /* ESTILOS DEL BOTÓN INTERACTIVO */
+    .boton-hamburguesa {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2000;
+    }
+    .boton-hamburguesa span {
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+        transition: all 0.3s ease;
+        transform-origin: left center;
+    }
+
+    /* ANIMACIÓN: Transformación del botón en una "X" */
+    .boton-hamburguesa.activo span:nth-child(1) {
+        transform: rotate(45deg);
+        background-color: var(--color-secundario);
+    }
+    .boton-hamburguesa.activo span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+    .boton-hamburguesa.activo span:nth-child(3) {
+        transform: rotate(-45deg);
+        background-color: var(--color-secundario);
+    }
+
+    /* DESPLIEGUE DEL MENÚ MÓVIL DESDE ARRIBA */
+    .menu-navegacion {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(7, 14, 27, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%); /* Oculto arriba de la pantalla */
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1500;
+    }
+    .menu-navegacion.abierto {
+        transform: translateY(0); /* Se despliega suavemente hacia abajo */
+    }
+    nav ul { 
+        flex-direction: column;
+        gap: 35px; 
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 1.2rem; /* Letras más grandes para pantallas táctiles */
+    }
 }
+
+/* Ocultar el botón hamburguesa por defecto en computadoras */
+@media (min-width: 993px) {
+    .boton-hamburguesa {
+        display: none;
+    }
+}
+
 </style>
 </head>
 <body>
  
     <header>
-              <!-- CONTENEDOR DE IDENTIDAD MINIMALISTA TOTALMENTE ARMONIZADO -->
+        <!-- CONTENEDOR DE IDENTIDAD MINIMALISTA TOTALMENTE ARMONIZADO -->
         <a href="#" class="marca-estudio">
             <!-- Sigla RGM en oro satinado -->
             <div class="sigla-premium">RGM</div>
@@ -629,7 +700,16 @@ footer {
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
             </div>
         </a>
-        <nav>
+
+        <!-- NUEVO: Botón Hamburguesa Estructurado -->
+        <button class="boton-hamburguesa" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Menú de Navegación Adaptado -->
+        <nav class="menu-navegacion">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#estudio">El Estudio</a></li>
@@ -970,6 +1050,35 @@ footer {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
+        // 4. Lógica de activación para el Menú Hamburguesa Móvil
+    const botonHamburguesa = document.querySelector('.boton-hamburguesa');
+    const menuNavegacion = document.querySelector('.menu-navegacion');
+    const enlacesMenu = document.querySelectorAll('.menu-navegacion ul li a');
+
+    if (botonHamburguesa && menuNavegacion) {
+        // Abrir o cerrar al tocar las tres líneas
+        botonHamburguesa.addEventListener('click', function() {
+            botonHamburguesa.classList.toggle('activo');
+            menuNavegacion.classList.toggle('abierto');
+            
+            // Bloquea el scroll del fondo cuando el menú está abierto
+            if (menuNavegacion.classList.contains('abierto')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Cerrar automáticamente el menú al hacer clic en cualquier enlace (Inicio, Estudio, etc.)
+        enlacesMenu.forEach(enlace => {
+            enlace.addEventListener('click', function() {
+                botonHamburguesa.classList.remove('activo');
+                menuNavegacion.classList.remove('abierto');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
 </script> 
 
 <!-- BARRA FLOTANTE INTERACTIVA LATERAL (CORREGIDA: URLs e íconos validados) -->
