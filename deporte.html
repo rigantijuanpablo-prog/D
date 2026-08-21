@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derecho Deportivo | Riganti, Geiler & Márquez Alluralde</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <!-- Fuentes Corporativas de Élite Saneadas -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           VARIABLES DE DISEÑO PREMIUM UNIFICADAS
+           ========================================================================== */
+        :root {
+            --color-primario: #070e1b;     /* Azul medianoche profundo */
+            --color-secundario: #c5a880;   /* Dorado satinado institucional */
+            --color-fondo-claro: #f8fafc;  /* Gris premium ultra limpio */
+            --color-texto-oscuro: #1e293b; /* Gris Oxford para lectura */
+            --color-texto-suave: #64748b; 
+            --fuente-titulos: 'Cinzel', serif;
+            --fuente-cuerpo: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto-oscuro);
+            background-color: #ffffff;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ==========================================================================
+           BARRA DE NAVEGACIÓN COMPACTA SANEADA (Sin estilos inline)
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 22px 8%;
+            background-color: rgba(7, 14, 27, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.12);
+            transition: all 0.4s ease;
+            gap: 20px;
+        }
+
+        .marca-estudio {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .marca-estudio .apellido-principal {
+            font-family: var(--fuente-titulos);
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            line-height: 1.15;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .marca-estudio .tagline-abogados {
+            font-family: var(--fuente-titulos);
+            font-size: 0.65rem;
+            color: var(--color-secundario);
+            letter-spacing: 3px;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        header nav {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: var(--color-secundario);
+        }
+
+        /* ==========================================================================
+           PORTADA HERO INTERNA
+           ========================================================================== */
+        .hero-interno {
+            padding: 180px 12% 90px 12%;
+            background-color: var(--color-primario);
+            color: #ffffff;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .linea-separadora {
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-secundario);
+            margin-bottom: 25px;
+        }
+
+        .hero-interno h1 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.6rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .hero-interno p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 850px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ==========================================================================
+           GRILLA DE SUBÁREAS TÉCNICAS
+           ========================================================================== */
+        .contenedor-subareas {
+            padding: 100px 12%;
+            background-color: var(--color-fondo-claro);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .tarjeta-subarea {
+            background-color: #ffffff;
+            padding: 50px 40px;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+        }
+
+        .tarjeta-subarea:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-secundario);
+            box-shadow: 0 20px 40px rgba(7, 14, 27, 0.03);
+        }
+
+        .tarjeta-subarea h3 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-primario);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .tarjeta-subarea ul {
+            list-style: none;
+        }
+
+        .tarjeta-subarea ul li {
+            font-size: 0.9rem;
+            color: var(--color-texto-suave);
+            margin-bottom: 16px;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 25px;
+            font-weight: 300;
+        }
+
+        .tarjeta-subarea ul li strong {
+            color: var(--color-texto-oscuro);
+            font-weight: 500;
+        }
+
+        /* CONTROL DE TILDES COMPATIBLE Y PREMIUM DE TEXTO */
+        .tarjeta-subarea ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-secundario);
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           SECCIÓN LLAMADO A LA ACCIÓN (CTA)
+           ========================================================================== */
+        .cta-interno {
+            position: relative;
+            padding: 120px 12%;
+            background-image: linear-gradient(rgba(7, 14, 27, 0.85), rgba(7, 14, 27, 0.9)), url('deporte-imagen.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contenido-cta-interno {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .cta-interno h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.2rem;
+            color: var(--color-secundario);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-interno .linea-cta {
+            width: 50px;
+            height: 2px;
+            background-color: var(--color-secundario);
+            margin: 0 auto 25px auto;
+        }
+
+        .cta-interno p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
+        }
+
+        .boton-premium-cta {
+            display: inline-block;
+            padding: 16px 45px;
+            border: 1px solid var(--color-secundario);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .boton-premium-cta:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+            box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
+        }
+
+        /* ==========================================================================
+           RESPONSIVIDAD
+           ========================================================================== */
+        @media (max-width: 992px) {
+            header { 
+                padding: 15px 5%; 
+                flex-direction: column;
+                gap: 15px;
+            }
+            header nav {
+                margin-right: 0;
+            }
+            .hero-interno { padding: 150px 5% 60px 5%; }
+            .hero-interno h1 { font-size: 2.2rem; }
+            .contenedor-subareas { padding: 60px 5%; grid-template-columns: 1fr; }
+            .cta-interno { padding: 80px 5%; }
+            .cta-interno h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="marca-estudio">
+<a href="index.html" class="marca-estudio">
+            <span class="apellido-principal">RIGANTI, GEILER & MÁRQUEZ ALLURALDE</span>
+            <span class="tagline-abogados">ABOGADOS</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li><a href="index.html#estudio">EL ESTUDIO</a></li>
+                <li><a href="index.html#practicas">ÁREAS</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-interno">
+            <div class="linea-separadora"></div>
+            <h1>Derecho Deportivo</h1>
+            <p>Asesoramos a futbolistas, atletas de alto rendimiento, agentes e intermediarios y clubes en la gestión de sus contratos y transferencias. Aportamos claridad en un mercado con reglas muy específicas, tanto a nivel nacional como internacional en múltiples jurisdicciones.</p>
+        </section>
+
+        <section class="contenedor-subareas">
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta-subarea">
+                <h3>Fichajes y Transferencias de Jugadores</h3>
+                <ul>
+                    <li><strong>Contratos de transferencia:</strong> Redactamos los acuerdos de cesión de derechos federativos y económicos entre clubes de la Liga Profesional, el ascenso y el exterior.</li>
+                    <li><strong>Derechos de Formación y Mecanismo de Solidaridad:</strong> Calculamos, reclamamos y ejecutamos judicial o administrativamente los montos que corresponden a los clubes formadores según FIFA y las leyes locales.</li>
+                    <li><strong>Operaciones internacionales:</strong> Asesoramos en los giros de divisas y las retenciones impositivas obligatorias que aplican en los pases al exterior.</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta-subarea">
+                <h3>Contratos de Trabajo y Representación</h3>
+                <ul>
+                    <li><strong>Contratos bajo la Ley 20.160:</strong> Diseñamos contratos de trabajo deportivo que regulen de forma transparente los sueldos, primas, premios y cláusulas de rescisión.</li>
+                    <li><strong>Explotación de imagen:</strong> Separamos el contrato laboral del club de los acuerdos por derechos de imagen personales del atleta para marcas de indumentaria o sponsors.</li>
+                    <li><strong>Contratos de intermediación:</strong> Redactamos los acuerdos entre representantes de jugadores y clubes, asegurando el cobro legítimo de comisiones.</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta-subarea">
+                <h3>Defensa Institucional y Litigios</h3>
+                <ul>
+                    <li><strong>Tribunales deportivos y TAS:</strong> Defendemos los intereses de atletas y clubes ante las comisiones disciplinarias de la AFA, Conmebol y el Tribunal de Arbitraje Deportivo en Suiza.</li>
+                    <li><strong>Estatutos y auditorías de clubes:</strong> Asesoramos a comisiones directivas en la adecuación de sus reglamentos internos y cumplimiento institucional.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta-interno">
+            <div class="contenido-cta-interno">
+                <h2>¿Requiere asesoramiento en transferencias o contratos deportivos?</h2>
+                <div class="linea-cta"></div>
+                <p>Coordine un análisis confidencial y estratégico con nuestros socios especialistas para estructurar sus operaciones nacionales o transfronterizas de manera segura.</p>
+                <a href="index.html#contacto" class="boton-premium-cta">Agendar Consulta de Práctica</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.style.padding = '15px 8%';
+                    header.style.backgroundColor = 'rgba(7, 14, 27, 0.99)';
+                } else {
+                    header.style.padding = '22px 8%';
+                    header.style.backgroundColor = 'rgba(7, 14, 27, 0.96)';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
