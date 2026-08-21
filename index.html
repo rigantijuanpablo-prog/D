@@ -68,26 +68,36 @@ header {
 
 .marca-estudio {
     display: inline-flex;
-    align-items: center; 
+    align-items: center;          /* Centrado vertical perfecto entre logo y texto */
     text-decoration: none;
     background: transparent;
     padding: 5px 0;
     transition: opacity 0.3s ease;
 }
 
+
 .marca-estudio:hover {
     opacity: 0.85;
 }
 
+/* ==========================================================================
+   LOGOTIPO PREMIUM RECTIFICADO (PROPORCIONES REALES Y RENDERING DE ÉLITE)
+   ========================================================================== */
 .logo-premium {
-    width: 60px;  
-    height: 55px; 
+    height: 48px;                 /* Altura institucional estilizada */
+    width: auto;                  /* Calcula automáticamente el ancho real sin deformar */
+    min-width: 50px;              /* Garantiza un área mínima de visualización */
+    aspect-ratio: auto;           /* Respeta el formato nativo del archivo PNG */
+    
     background-image: url('3cucharas-logo-azul-liviano.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    
+    /* Forza al navegador a renderizar los vectores del PNG con máxima nitidez */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    display: block;
 }
 
 .nombre-estudio {
