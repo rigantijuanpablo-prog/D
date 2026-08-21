@@ -747,50 +747,78 @@ footer {
 </head>
 <body>
  
-    <header>
-<div class="brand-container"> 
-  <!-- Archivo extraído de tu carpeta tinified -->
-  <img src="tu-3cucharas-logo-azul-liviano.png" alt="Logo" class="brand-logo" width="60" height="55">
+<header class="header-principal">
+  <div class="brand-container"> 
+    <!-- Tu archivo PNG transparente extraído de la carpeta tinified -->
+    <img src="tu-3cucharas-logo-azul-liviano.png" alt="Logo Riganti Geiler" class="brand-logo" width="60" height="55">
 
-  <!-- Línea divisoria idéntica a la original -->
-  <div class="brand-divider"></div>
+    <!-- Línea divisoria idéntica a la original -->
+    <div class="brand-divider"></div>
 
-  <!-- Nombres de la firma -->
-  <div class="brand-text">
-    <div class="text-primary">RIGANTI, GEILER</div>
-    <div class="text-secondary">& MÁRQUEZ ALLURALDE</div>
+    <!-- Nombres de la firma -->
+    <div class="brand-text">
+      <div class="text-primary">RIGANTI, GEILER</div>
+      <div class="text-secondary">& MÁRQUEZ ALLURALDE</div>
+    </div>
   </div>
-</div>
+
+  <!-- Menú de Navegación Adaptado -->
+  <nav class="menu-navegacion">
+      <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#estudio">El Estudio</a></li>
+          <li><a href="#practicas">Prácticas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+      </ul>
+  </nav>
+
+  <!-- Botón Hamburguesa Estructurado para Móviles -->
+  <button class="boton-hamburguesa" aria-label="Abrir menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+</header>
 
 <style>
-  /* Contenedor con el azul exacto de tu sitio web */
+  /* Estructura base del Header con tu azul exacto */
+  .header-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Empuja el menú a la derecha y el logo a la izquierda */
+    background-color: #040b14; /* Tu color corporativo exacto */
+    padding: 10px 40px; /* Espaciado interno elegante */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Contenedor de identidad: 100% integrado y plano */
   .brand-container {
     display: flex;
     align-items: center;
-    background-color: #040b14; /* El tono exacto de tu imagen para evitar diferencias */
-    padding: 15px 25px;
-    width: fit-content;
+    background: transparent; /* Evita cualquier recuadro o diferencia de azul */
     user-select: none;
   }
 
-  /* Renderizado nítido del PNG transparente */
+  /* Renderizado nítido del logo sin importar el zoom */
   .brand-logo {
     display: block;
     height: 55px;
     width: auto;
-    margin-right: 20px;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 
+  /* Línea divisoria vertical */
   .brand-divider {
     width: 1px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-right: 20px;
+    margin: 0 20px; /* Separa simétricamente el logo y el texto */
   }
 
-  /* Estilo de los textos nativos */
+  /* Estilo tipográfico nativo para los apellidos */
   .brand-text {
     display: flex;
     flex-direction: column;
@@ -811,27 +839,63 @@ footer {
     margin-top: 3px;
     letter-spacing: 2.5px;
   }
+
+  /* Estilos básicos para el menú de navegación horizontal */
+  .menu-navegacion ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px; /* Distancia entre enlaces */
+  }
+
+  .menu-navegacion a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+
+  .menu-navegacion a:hover {
+    color: #ebd097; /* Destello dorado al pasar el cursor */
+  }
+
+  /* Botón hamburguesa oculto por defecto en pantallas de escritorio */
+  .boton-hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .boton-hamburguesa span {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  /* Diseño adaptativo para dispositivos móviles */
+  @media (max-width: 768px) {
+    .header-principal {
+      padding: 10px 20px;
+    }
+    .menu-navegacion {
+      display: none; /* Oculta el menú horizontal para que funcione el botón hamburguesa */
+    }
+    .boton-hamburguesa {
+      display: flex;
+    }
+  }
 </style>
 
-
-
-        <!-- NUEVO: Botón Hamburguesa Estructurado -->
-        <button class="boton-hamburguesa" aria-label="Abrir menú de navegación">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <!-- Menú de Navegación Adaptado -->
-        <nav class="menu-navegacion">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#estudio">El Estudio</a></li>
-                <li><a href="#practicas">Prácticas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <!-- PORTADA CON VIDEO DE FONDO Y MÁSCARA ANGULAR FORZADA -->
     <section id="inicio" class="hero-principal" style="position: relative; overflow: hidden; background-color: #070e1b; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
