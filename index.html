@@ -79,70 +79,69 @@ header {
 
 /* Modificación final para integrar el logo en 3D eliminando el recuadro por completo */
 /* Creamos el logo en 3D de forma nativa por código CSS sin usar archivos de imagen */
+/* Contenedor principal alineado y con el color exacto de tu web */
+.marca-estudio {
+    display: inline-flex;
+    align-items: center;
+    background-color: #040b14; /* El azul marino exacto de tu página */
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+/* Integración instantánea del Isotipo PNG Transparente */
 .logo-premium {
-    height: 42px;         /* Altura perfecta en escala 1:1 con el texto */
-    width: 42px;          /* Lienzo simétrico cuadrado */
-    display: block;
-    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
-    padding-right: 20px;
-    margin-right: 5px;
-    position: relative;
-}
-
-/* Dibujamos la textura metálica dorada y el relieve 3D sobre la silueta exacta */
-.logo-premium::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 22px; /* Espacio real del dibujo restando el padding */
-    height: 42px;
-    /* Degradado en oro pulido idéntico al render original */
-    background: linear-gradient(135deg, #b39266 0%, #e2cfb4 30%, #c5a880 70%, #997a50 100%);
-    /* Filtro de relieve e iluminación tridimensional */
-    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.55)) contrast(1.1);
+    width: 60px;  /* Ancho ideal del monograma */
+    height: 55px; /* Alto ideal del monograma */
+    /* REEMPLAZA 'tu-archivo-extraido.png' por el nombre de tu imagen optimizada */
+    background-image: url('3cucharas-logo-azul-liviano.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 20px;
     
-    /* Máscara matemática que recorta el oro con la silueta exacta de las cucharitas entrelazadas */
-    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><g fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M 50 12 C 42 12 42 35 48 45 L 50 58 L 52 45 C 58 35 58 12 50 12 Z'/><path d='M 18 72 C 12 66 30 58 40 61 L 52 52 L 42 63 C 32 70 24 78 18 72 Z'/><path d='M 82 72 C 88 66 70 58 60 61 L 48 52 L 58 63 C 68 70 76 78 82 72 Z'/><path d='M 46 51 L 54 51'/></g></svg>");
-    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><g fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M 50 12 C 42 12 42 35 48 45 L 50 58 L 52 45 C 58 35 58 12 50 12 Z'/><path d='M 18 72 C 12 66 30 58 40 61 L 52 52 L 42 63 C 32 70 24 78 18 72 Z'/><path d='M 82 72 C 88 66 70 58 60 61 L 48 52 L 58 63 C 68 70 76 78 82 72 Z'/><path d='M 46 51 L 54 51'/></g></svg>");
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    /* Evita que los bordes del logo se pongan borrosos al hacer zoom */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
-/* Forzamos que la caja tipográfica mantenga la misma altura del logo */
+/* Línea divisoria vertical nativa generada por CSS */
+.logo-premium::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.25); /* Blanco sutil */
+    position: relative;
+    left: 70px; /* La posiciona justo entre el logo y el texto */
+    top: 7px;
+}
+
+/* Estructura y tipografía de los nombres */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 42px;         /* Nivelación horizontal perfecta */
-}
-
-
-
-
-
-.nombre-estudio .apellido-principal {
-    font-family: var(--fuente-titulos);
-    display: block;
-    font-weight: 500;
-    font-size: 1.15rem;
-    letter-spacing: 1.5px;
-    line-height: 1.15;
-    color: #ffffff !important;
-}
-
-.nombre-estudio .apellido-secundario {
-    font-family: var(--fuente-titulos);
-    display: block;
-    font-weight: 300;
-    font-size: 0.85rem;
+    font-family: 'Times New Roman', Times, serif;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.75) !important;
-    margin-top: 4px;
-    line-height: 1.15;
+    margin-left: 15px; /* Espacio después de la línea divisoria */
 }
+
+/* Apellidos principales en blanco puro */
+.apellido-principal {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Apellido secundario */
+.apellido-secundario {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12.5px;
+    margin-top: 3px;
+    letter-spacing: 2.5px;
+}
+
+
 
 nav ul {
     display: flex;
@@ -760,17 +759,71 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD 100% INTEGRADO E INSTANTÁNEO -->
-        <a href="#" class="marca-estudio">
-            <!-- Este contenedor se convertirá en tu logo mediante el código CSS -->
-            <div class="logo-premium"></div>
-            
-            <!-- Estructura limpia de apellidos en blanco puro -->
-            <div class="nombre-estudio">
-                <span class="apellido-principal">RIGANTI, GEILER</span>
-                <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
-            </div>
-        </a>
+<div class="brand-container">
+  <!-- Archivo extraído de tu carpeta tinified -->
+  <img src="tu-archivo-extraido.png" alt="Logo" class="brand-logo" width="60" height="55">
+
+  <!-- Línea divisoria idéntica a la original -->
+  <div class="brand-divider"></div>
+
+  <!-- Nombres de la firma -->
+  <div class="brand-text">
+    <div class="text-primary">RIGANTI, GEILER</div>
+    <div class="text-secondary">& MÁRQUEZ ALLURALDE</div>
+  </div>
+</div>
+
+<style>
+  /* Contenedor con el azul exacto de tu sitio web */
+  .brand-container {
+    display: flex;
+    align-items: center;
+    background-color: #040b14; /* El tono exacto de tu imagen para evitar diferencias */
+    padding: 15px 25px;
+    width: fit-content;
+    user-select: none;
+  }
+
+  /* Renderizado nítido del PNG transparente */
+  .brand-logo {
+    display: block;
+    height: 55px;
+    width: auto;
+    margin-right: 20px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  .brand-divider {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 20px;
+  }
+
+  /* Estilo de los textos nativos */
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+  }
+
+  .text-primary {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .text-secondary {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12.5px;
+    margin-top: 3px;
+    letter-spacing: 2.5px;
+  }
+</style>
+
 
 
         <!-- NUEVO: Botón Hamburguesa Estructurado -->
