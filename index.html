@@ -100,14 +100,17 @@ header {
     display: block;
 }
 
-.nombre-estudio {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    padding-left: 20px;
-    margin-left: 20px;
+.nombre-estudio .apellido-secundario {
+    font-family: var(--fuente-titulos);
+    display: block;
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 2.5px;
+    color: var(--color-secundario) !important; /* Forza el dorado institucional en armonía con el isotipo */
+    margin-top: 5px;
+    line-height: 1.15;
 }
+
 
 .nombre-estudio .apellido-principal {
     font-family: var(--fuente-titulos); /* Optimización de tipografía de marca */
