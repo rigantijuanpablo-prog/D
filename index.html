@@ -609,10 +609,39 @@ footer {
 /* ==========================================================================
    RESPONSIVIDAD Y ADAPTACIÓN MÓVIL (MEDIA QUERIES CON HAMBURGUESA)
    ========================================================================== */
+/* ==========================================================================
+   NUEVO: PINTA LOS TILDES DE TEXTO EN DORADO SATINADO SIN TOCAR LAS LETRAS
+   ========================================================================== */
+/* Forza a los títulos de las tarjetas a usar el Azul Profundo Institucional */
+.tarjeta-corporativa h3 a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Estilo base para el texto de los renglones */
+.tarjeta-corporativa ul li {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+/* Pinta únicamente el tilde de texto aislado dentro del <span> */
+.tarjeta-corporativa ul li .tilde-oro {
+    color: var(--color-secundario) !important;
+    font-weight: 600 !important;
+    margin-right: 8px; /* Espacio elegante antes de la palabra */
+    display: inline-block;
+}
+
+/* ==========================================================================
+   TU BLOQUE RESPONSIVO MÓVIL (SE MANTIENE IDENTICO DEBAJO)
+   ========================================================================== */
 @media (max-width: 992px) {
     header { 
         padding: 15px 5%; 
-        flex-direction: row; /* Mantiene logo e ícono alineados horizontalmente */
+        flex-direction: row; 
         justify-content: space-between;
     }
     section { 
@@ -629,7 +658,7 @@ footer {
         grid-column: span 2; 
     }
     .barra-flotante-contacto {
-        display: none; /* Desactivado en móviles por usabilidad táctil */
+        display: none; 
     }
 
     /* ESTILOS DEL BOTÓN INTERACTIVO */
@@ -679,12 +708,12 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translateY(-100%); /* Oculto arriba de la pantalla */
+        transform: translateY(-100%); 
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1500;
     }
     .menu-navegacion.abierto {
-        transform: translateY(0); /* Se despliega suavemente hacia abajo */
+        transform: translateY(0); 
     }
     nav ul { 
         flex-direction: column;
@@ -692,7 +721,7 @@ footer {
         text-align: center;
     }
     nav ul li a {
-        font-size: 1.2rem; /* Letras más grandes para pantallas táctiles */
+        font-size: 1.2rem; 
     }
 }
 
@@ -702,7 +731,6 @@ footer {
         display: none;
     }
 }
-
 </style>
 </head>
 <body>
