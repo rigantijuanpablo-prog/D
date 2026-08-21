@@ -78,21 +78,23 @@ header {
 }
 
 /* Modificación para que el logo flote agrandado sin empujar el tamaño de los textos */
+
+/* Modificación para nivelar el tamaño del logo y los nombres a escala armónica 1:1 */
 .logo-premium {
-    height: 56px;        /* Mantiene el tamaño imponente del blasón dorado */
-    width: auto;         
-    object-fit: contain; 
-    border-right: 1px solid rgba(197, 168, 128, 0.25); 
+    height: 38px;        /* Altura justa alineada con el alto total del bloque de texto */
+    width: auto;         /* Mantiene las proporciones reales del render tridimensional */
+    object-fit: contain; /* Garantiza nitidez digital absoluta */
+    border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
     padding-right: 20px;
     display: block;
 }
 
-/* Forzamos que el bloque de textos mantenga su estructura original compacta */
+/* Restringimos la caja de textos para que se acople en perfecto eje horizontal con el logo */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 40px;        /* Restringe la altura máxima del bloque de texto */
+    height: 38px;        /* Misma altura exacta que el logotipo */
 }
 
 
@@ -741,9 +743,9 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD 100% FIEL AL ORIGINAL -->
+<!-- CONTENEDOR DE IDENTIDAD TOTALMENTE EQUILIBRADO -->
         <a href="#" class="marca-estudio">
-            <!-- Tu logo original con textura 3D en alta definición y transparencia real -->
+            <!-- Forzamos la carga del isotipo con transparencia real integrada -->
             <img src="3cucharas-logo.png" alt="Logo RGM" class="logo-premium">
             
             <!-- Estructura limpia de apellidos en blanco puro -->
