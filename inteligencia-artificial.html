@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inteligencia Artificial y Tecnologías Emergentes | Riganti, Geiler & Márquez Alluralde</title>
-    <link rel="stylesheet" href="style.css"> 
     
     <!-- Fuentes Corporativas de Élite Saneadas -->
     <link rel="preconnect" href="https://googleapis.com">
@@ -41,7 +40,7 @@
         }
 
         /* ==========================================================================
-           BARRA DE NAVEGACIÓN COMPACTA SANEADA (Sin estilos inline)
+           BARRA DE NAVEGACIÓN COMPACTA SOLUCIONADA (Contraste Asegurado)
            ========================================================================== */
         header {
             position: fixed;
@@ -49,43 +48,67 @@
             left: 0;
             width: 100%;
             padding: 22px 8%;
-            background-color: rgba(7, 14, 27, 0.96);
+            background-color: rgba(7, 14, 27, 0.96); /* Fondo oscuro forzado para que no quede invisible */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.12);
-            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             gap: 20px;
         }
 
         .marca-estudio {
             text-decoration: none;
             display: flex;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+            transition: opacity 0.3s ease;
+        }
+
+        .marca-estudio:hover {
+            opacity: 0.85;
+        }
+
+        .sigla-premium {
+            font-family: var(--fuente-titulos);
+            color: var(--color-secundario) !important;
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            border-right: 1px solid rgba(197, 168, 128, 0.25);
+            padding-right: 20px;
+            line-height: 1;
+            user-select: none;
+        }
+
+        .nombre-estudio {
+            display: flex;
             flex-direction: column;
             justify-content: center;
-            flex-shrink: 0;
         }
 
-        .marca-estudio .apellido-principal {
+        .nombre-estudio .apellido-principal {
             font-family: var(--fuente-titulos);
             font-weight: 500;
-            font-size: 1.05rem;
-            letter-spacing: 1px;
+            font-size: 1.15rem;
+            letter-spacing: 1.5px;
             line-height: 1.15;
-            color: #ffffff;
-            white-space: nowrap;
+            color: #ffffff !important; /* Forzado a blanco para legibilidad absoluta */
         }
 
-        .marca-estudio .tagline-abogados {
+        .nombre-estudio .apellido-secundario {
             font-family: var(--fuente-titulos);
-            font-size: 0.65rem;
-            color: var(--color-secundario);
-            letter-spacing: 3px;
+            display: block;
+            font-weight: 300;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.75) !important;
             margin-top: 4px;
-            font-weight: 400;
+            line-height: 1.15;
         }
 
         header nav {
@@ -96,47 +119,47 @@
         header nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
             margin: 0;
             padding: 0;
             white-space: nowrap;
         }
 
         header nav ul li a {
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.85) !important;
             text-decoration: none;
             font-size: 0.8rem;
-            letter-spacing: 1px;
-            font-weight: 300;
+            letter-spacing: 1.5px;
+            font-weight: 400;
             text-transform: uppercase;
             transition: color 0.3s ease;
         }
 
         header nav ul li a:hover {
-            color: var(--color-secundario);
+            color: var(--color-secundario) !important;
         }
 
         /* ==========================================================================
-           PORTADA HERO INTERNA
+           PORTADA HERO INTERNA SOLUCIONADA
            ========================================================================== */
         .hero-interno {
-            padding: 180px 12% 90px 12%;
+            padding: 220px 12% 110px 12%; /* Más aire superior para que no choque con la nav */
             background-color: var(--color-primario);
             color: #ffffff;
             position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
         }
 
         .linea-separadora {
             width: 40px;
-            height: 2px;
+            height: 1px;
             background-color: var(--color-secundario);
             margin-bottom: 25px;
         }
 
         .hero-interno h1 {
             font-family: var(--fuente-titulos);
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             color: #ffffff;
             margin-bottom: 20px;
             font-weight: 400;
@@ -148,7 +171,7 @@
             color: rgba(255,255,255,0.75);
             max-width: 850px;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* ==========================================================================
@@ -203,7 +226,7 @@
             font-weight: 500;
         }
 
-        /* CONTROL DE TILDES COMPATIBLE Y PREMIUM DE TEXTO */
+        /* CONTROL DE TILDES PREMIUM DE TEXTO UNIFICADO */
         .tarjeta-subarea ul li::before {
             content: "✓";
             position: absolute;
@@ -224,8 +247,6 @@
             background-attachment: fixed;
             color: #ffffff;
             text-align: center;
-            overflow: hidden;
-            min-height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -282,20 +303,19 @@
             color: var(--color-primario);
             box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
         }
-
-        /* ==========================================================================
-           RESPONSIVIDAD
+                /* ==========================================================================
+           RESPONSIVIDAD MÓVIL SANEADA
            ========================================================================== */
         @media (max-width: 992px) {
             header { 
                 padding: 15px 5%; 
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
             }
-            header nav {
-                margin-right: 0;
+            header nav ul {
+                gap: 20px;
             }
-            .hero-interno { padding: 150px 5% 60px 5%; }
+            .hero-interno { padding: 160px 5% 70px 5%; }
             .hero-interno h1 { font-size: 2.2rem; }
             .contenedor-subareas { padding: 60px 5%; grid-template-columns: 1fr; }
             .cta-interno { padding: 80px 5%; }
@@ -306,7 +326,6 @@
 <body>
 
     <header>
-      <header>
         <!-- CONTENEDOR DE IDENTIDAD MINIMALISTA TOTALMENTE ARMONIZADO CON LA PORTADA -->
         <a href="index.html" class="marca-estudio">
             <!-- Sigla RGM en oro satinado -->
@@ -380,15 +399,18 @@
             const header = document.querySelector('header');
             if (header) {
                 if (window.scrollY > 50) {
-                    header.style.padding = '15px 8%';
+                    header.style.padding = '14px 8%';
                     header.style.backgroundColor = 'rgba(7, 14, 27, 0.99)';
+                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
                 } else {
                     header.style.padding = '22px 8%';
                     header.style.backgroundColor = 'rgba(7, 14, 27, 0.96)';
+                    header.style.boxShadow = 'none';
                 }
             }
         });
     </script>
 </body>
 </html>
-      
+
+
