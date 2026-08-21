@@ -77,29 +77,22 @@ header {
     height: 100%;
 }
 
-/* Modificación para que el logo flote agrandado sin empujar el tamaño de los textos */
-
-/* Modificación para nivelar el tamaño del logo y los nombres a escala armónica 1:1 */
-/* Modificación para forzar que el logo y las letras mantengan exactamente la misma escala */
-/* Configuración para el logo original en 3D sobre fondo azul oscuro */
-/* Modificación final para acoplar el logo 3D sin fondo en escala 1:1 con las letras */
-/* Modificación final para acoplar el logo con fondo azul exacto en escala 1:1 */
 .logo-premium {
-    height: 44px;        /* Altura ideal emparejada con la tipografía */
-    width: auto;         /* Mantiene la proporción idéntica de la foto original */
-    object-fit: contain; /* Asegura nitidez absoluta en el renderizado */
+    height: 42px;         /* Altura perfecta en eje horizontal con el texto */
+    width: auto;          /* Mantiene la proporción simétrica exacta del dibujo */
+    object-fit: contain;  /* Evita cualquier tipo de pixelado o deformación */
     border-right: 1px solid rgba(197, 168, 128, 0.25); /* Línea divisoria vertical */
     padding-right: 20px;
     display: block;
 }
 
-/* Forzamos que el bloque de textos coincida en altura exacta con el logo */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 44px;        /* Altura simétrica exacta (Escala 1:1) */
+    height: 42px;         /* Nivelación horizontal perfecta */
 }
+
 
 
 
@@ -740,9 +733,9 @@ footer {
 <body>
  
     <header>
-<!-- CONTENEDOR DE IDENTIDAD 100% FIEL AL ORIGINAL Y FUSIONADO -->
+<!-- CONTENEDOR DE IDENTIDAD TOTALMENTE OPTIMIZADO -->
         <a href="#" class="marca-estudio">
-            <!-- Tu logo con el fondo azul exacto de la barra del estudio -->
+            <!-- Llamado directo a la imagen limpia con el fondo azul exacto -->
             <img src="3cucharas-logo.png" alt="Logo RGM" class="logo-premium">
             
             <!-- Estructura limpia de apellidos en blanco puro -->
@@ -751,6 +744,7 @@ footer {
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
             </div>
         </a>
+
 
 
 
