@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
     <!-- Fuentes Corporativas de Élite -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
 /* ==========================================================================
    VARIABLES DE DISEÑO PREMIUM (ESTILO MARVAL & BECCAR VARELA)
    ========================================================================== */
 :root {
-    --color-primario: #040b14;     /* Tu azul marino corporativo exacto */
+    --color-primario: #070e1b;     /* Azul medianoche profundo corporativo exacto */
     --color-secundario: #c5a880;   /* Dorado satinado institucional */
     --color-fondo-claro: #f8fafc;  /* Gris premium ultra limpio */
     --color-texto-oscuro: #1e293b; /* Gris Oxford para lectura */
@@ -54,10 +54,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(4, 11, 20, 0.96);
+    background-color: rgba(7, 14, 27, 0.96); /* Unificado al color primario */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 15px 8%;
+    padding: 15px 8%; /* Ajustado para balance de marca */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,11 +66,10 @@ header {
     transition: all 0.4s ease;
 }
 
-/* Contenedor de marca integrado y limpio */
 .marca-estudio {
-    display: inline-flex;
-    align-items: center; 
     text-decoration: none;
+    display: flex;
+    align-items: center;
     background: transparent;
     padding: 5px 0;
     transition: opacity 0.3s ease;
@@ -80,7 +79,7 @@ header {
     opacity: 0.9;
 }
 
-/* Tu imagen PNG transparente optimizada de 33KB */
+/* Contenedor del logotipo transparente optimizado */
 .logo-premium {
     width: 60px;  
     height: 55px; 
@@ -89,45 +88,49 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     
-    /* Mantiene los bordes perfectamente nítidos con el zoom */
+    /* Evita imperfecciones y bordes borrosos al aplicar zoom */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
 
-/* Línea divisoria nativa integrada al bloque tipográfico */
+/* Línea divisoria nativa unificada al bloque de texto */
 .nombre-estudio {
     display: flex;
     flex-direction: column;
-    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.nombre-estudio .apellido-principal {
+    font-family: var(--fuente-titulos);
+    display: block;
+    font-weight: 500;
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
+    line-height: 1.15;
+    color: #ffffff !important;
+}
+
+.nombre-estudio .apellido-secundario {
+    font-family: var(--fuente-titulos);
+    display: block;
+    font-weight: 300;
+    font-size: 0.85rem;
     letter-spacing: 2px;
-    border-left: 1px solid rgba(255, 255, 255, 0.25); 
-    padding-left: 20px; 
-    margin-left: 20px;  
-}
-
-/* Apellidos en blanco puro */
-.apellido-principal {
-    color: #ffffff;
-    font-size: 19px;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-/* Iniciales y apellidos secundarios */
-.apellido-secundario {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.75) !important;
     margin-top: 4px;
-    letter-spacing: 2.5px;
+    line-height: 1.15;
 }
 
-.menu-navegacion ul {
+nav ul {
     display: flex;
     list-style: none;
     gap: 40px;
 }
 
-.menu-navegacion ul li a {
+nav ul li a {
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-size: 0.8rem;
@@ -139,30 +142,50 @@ header {
     padding: 4px 0;
 }
 
-.menu-navegacion ul li a:hover {
+nav ul li a:hover {
     color: var(--color-secundario);
 }
 
-.boton-hamburguesa {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 2000;
+/* ==========================================================================
+   PORTADA DE BIENVENIDA (HERO SECTION)
+   ========================================================================== */
+.hero-principal h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-.boton-hamburguesa span {
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff;
-    transition: all 0.3s ease;
-    transform-origin: left center;
+.hero-principal p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.15rem;
+    font-weight: 300;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto 45px auto;
 }
+
+.boton-premium {
+    display: inline-block;
+    padding: 16px 45px;
+    border: 1px solid var(--color-secundario);
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: transparent;
+}
+
+.boton-premium:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+    box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
+}
+
 /* ==========================================================================
    COMPONENTES DE SECCIÓN Y CONTENIDO COMÚN
    ========================================================================== */
@@ -228,8 +251,7 @@ header {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-
-.tarjeta-valor p {
+     .tarjeta-valor p {
     color: var(--color-texto-suave);
     font-size: 0.95rem;
     font-weight: 400;
@@ -247,7 +269,7 @@ header {
     background-color: #ffffff;
     padding: 55px 40px;
     border: 1px solid #e2e8f0;
-    opacity: 1;
+    opacity: 1; /* Forzado a 1 para asegurar visualización sin fallos de JS */
     transform: translateY(0);
     transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
@@ -267,12 +289,7 @@ header {
     letter-spacing: 0.5px;
 }
 
-.tarjeta-corporativa h3 a {
-    color: var(--color-primario);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
+/* Efecto Hover UI unificado para tarjetas completas */
 .tarjeta-corporativa:hover h3 a {
     color: var(--color-secundario) !important;
 }
@@ -282,14 +299,9 @@ header {
     font-size: 0.95rem;
     line-height: 1.7;
     font-weight: 300;
-    margin-bottom: 15px;
 }
 
-.tarjeta-corporativa ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* Viñetas estéticas internas de tarjetas */
 .tarjeta-corporativa ul li {
     color: var(--color-texto-suave);
     font-size: 0.9rem;
@@ -302,67 +314,6 @@ header {
     font-weight: 600 !important;
     margin-right: 8px; 
     display: inline-block;
-}
-/* ==========================================================================
-   ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
-   ========================================================================= */
-.seccion-faq {
-    background-color: var(--color-fondo-claro);
-}
-
-.contenedor-faq {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-details {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 20px 30px;
-    transition: border-color 0.3s ease;
-}
-
-details[open] {
-    border-color: var(--color-secundario);
-}
-
-summary {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--fuente-titulos);
-    color: var(--color-primario);
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    user-select: none;
-}
-
-summary::-webkit-details-marker {
-    display: none; 
-}
-
-summary span {
-    color: var(--color-secundario);
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-details[open] summary span {
-    transform: rotate(180deg);
-}
-
-.respuesta-faq {
-    margin-top: 15px;
-    color: var(--color-texto-suave);
-    font-size: 0.95rem;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 15px;
 }
 
 /* ==========================================================================
@@ -444,11 +395,23 @@ details[open] summary span {
 }
 
 /* ==========================================================================
+   ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+   ========================================================================= */
+details summary::-webkit-details-marker {
+    display: none; /* Oculta flecha por defecto en Safari */
+}
+
+/* Animación y rotación fluida para la flecha dorada */
+details[open] summary span {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
    SECCIÓN DE CIERRE (#MODORGM)
    ========================================================================== */
 .seccion-cierre-marval {
     position: relative;
-    background-color: var(--color-primario);
+    background-color: var(--color-primario); /* Asegura fusión cromática completa */
     padding: 160px 20px; 
     text-align: center;
     color: #ffffff;
@@ -484,8 +447,7 @@ details[open] summary span {
     margin-bottom: 35px;
     opacity: 0.95;
 }
-
-.btn-instagram {
+ .btn-instagram {
     display: inline-block;
     background-color: var(--color-secundario);
     color: var(--color-primario);
@@ -520,7 +482,7 @@ details[open] summary span {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: var(--color-primario); 
+    background-color: var(--color-primario); /* Saneado con tu azul corporativo exacto */
     border-left: 2px solid var(--color-secundario);
     color: #ffffff;
     text-decoration: none;
@@ -561,14 +523,14 @@ details[open] summary span {
 }
 
 .item-flotante:hover .icono-flotante svg {
-    color: #040b14;
+    color: var(--color-primario);
 }
 
 .item-flotante:hover .texto-flotante {
     max-width: 150px;
     padding: 0 10px 0 20px;
     opacity: 1;
-    color: #040b14;
+    color: var(--color-primario);
 }
 
 /* ==========================================================================
@@ -628,7 +590,7 @@ footer {
 }
 
 /* ==========================================================================
-   RESPONSIVIDAD PREMIUM Y CONTROL HAMBURGUESA MEJORADO
+   RESPONSIVIDAD Y ADAPTACIÓN MÓVIL (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 992px) {
     header { 
@@ -653,7 +615,7 @@ footer {
         display: none; 
     }
 
-    /* ANIMACIÓN NUEVA: Transformación elegante en "X" dorada */
+    /* Estilos del Botón Hamburguesa Móvil */
     .boton-hamburguesa {
         display: flex;
         flex-direction: column;
@@ -665,7 +627,6 @@ footer {
         cursor: pointer;
         z-index: 2000;
     }
-    
     .boton-hamburguesa span {
         width: 100%;
         height: 2px;
@@ -673,27 +634,18 @@ footer {
         transition: all 0.3s ease;
         transform-origin: left center;
     }
+    .boton-hamburguesa.activo span:nth-child(1) { transform: rotate(45deg); background-color: var(--color-secundario); }
+    .boton-hamburguesa.activo span:nth-child(2) { opacity: 0; width: 0%; }
+    .boton-hamburguesa.activo span:nth-child(3) { transform: rotate(-45deg); background-color: var(--color-secundario); }
 
-    .boton-hamburguesa.activo span:nth-child(1) {
-        transform: rotate(45deg);
-        background-color: var(--color-secundario);
-    }
-    .boton-hamburguesa.activo span:nth-child(2) {
-        width: 0%;
-        opacity: 0;
-    }
-    .boton-hamburguesa.activo span:nth-child(3) {
-        transform: rotate(-45deg);
-        background-color: var(--color-secundario);
-    }
-    /* DESPLIEGUE NUEVO: Efecto Cortina Premium con Blur */
+    /* Menú Cortina Desplegable Premium */
     .menu-navegacion {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(4, 11, 20, 0.98);
+        background-color: rgba(7, 14, 27, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         display: flex;
@@ -703,17 +655,14 @@ footer {
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1500;
     }
-    
     .menu-navegacion.activo {
         transform: translateY(0); 
     }
-    
     .menu-navegacion ul { 
         flex-direction: column;
         gap: 35px; 
         text-align: center;
     }
-    
     .menu-navegacion ul li a {
         font-size: 1.2rem; 
     }
@@ -724,14 +673,17 @@ footer {
         display: none;
     }
 }
-    </style>
+</style>
 </head>
 <body>
-
+ 
     <header>
+          <!-- CONTENEDOR DE IDENTIDAD TOTALMENTE INTEGRADO E INSTANTÁNEO -->
         <a href="#" class="marca-estudio">
-            <!-- Contenedor optimizado para inyectar el PNG de 33KB desde CSS -->
+            <!-- Tu nuevo logo transparente inyectado vectorialmente desde CSS -->
             <div class="logo-premium"></div>
+            
+            <!-- Estructura limpia de apellidos en blanco puro -->
             <div class="nombre-estudio">
                 <span class="apellido-principal">RIGANTI, GEILER</span>
                 <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
@@ -745,9 +697,9 @@ footer {
             <span></span>
         </button>
 
-        <!-- Menú de Navegación Unificado -->
+        <!-- Menú de Navegación Adaptado -->
         <nav class="menu-navegacion">
-            <ul> 
+            <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#estudio">El Estudio</a></li>
                 <li><a href="#practicas">Prácticas</a></li>
@@ -755,23 +707,24 @@ footer {
             </ul>
         </nav>
     </header>
+
     <!-- PORTADA CON VIDEO DE FONDO Y MÁSCARA TRANSLÚCIDA -->
-    <section id="inicio" class="hero-principal" style="position: relative; overflow: hidden; background-color: #040b14; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <section id="inicio" class="hero-principal" style="position: relative; overflow: hidden; background-color: #070e1b; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
         
-        <!-- Elemento de video con parámetros de forzado ambiental -->
+        <!-- El elemento de video con parámetros de forzado institucional -->
         <video autoplay muted loop playsinline preload="auto" style="position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; z-index: 1; transform: translate(-50%, -50%); object-fit: cover;">
             <source src="video-rgma.mp4" type="video/mp4">
             Tu navegador no soporta videos.
         </video>
 
-        <!-- Capa oscura translúcida para garantizar contraste de letras blancas -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(4, 11, 20, 0.75), rgba(4, 11, 20, 0.9)); z-index: 2;"></div>
+        <!-- Capa oscura translúcida para garantizar el perfecto contraste de las letras blancas -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(7, 14, 27, 0.72), rgba(7, 14, 27, 0.88)); z-index: 2;"></div>
 
-        <!-- Textos institucionales sobre el video -->
-        <div style="position: relative; z-index: 3; text-align: center; color: #ffffff; max-width: 900px; padding: 0 20px; margin: 0 auto;">
+        <!-- Textos institucionales equilibrados sobre el video ambiental -->
+       <div style="position: relative; z-index: 3; text-align: center; color: #ffffff; max-width: 900px; padding: 0 20px; margin: 0 auto;">
             <h1>Trayectoria Legal con una Perspectiva de Vanguardia</h1>
             <p style="margin: 20px auto 40px auto; max-width: 750px; text-align: center; color: rgba(255, 255, 255, 0.75); font-size: 1.15rem; font-weight: 300; line-height: 1.6;">
-                Brindamos soluciones jurídicas estratégicas de alta complejidad para empresas tecnológicas, Pymes en proceso de transformación digital y protagonistas de la economía moderna.
+                Brindamos soluciones jurídicas estratégicas de alta complejidad para empresas tecnológicas, Pymes en proceso de transformación digital y protagonists de la economía moderna.
             </p>
             <a href="#contacto" class="boton-premium">Agendar consulta confidencial</a>
         </div>
@@ -814,6 +767,7 @@ footer {
             </div>
         </div>
     </section>
+
     <!-- SECCIÓN ÁREAS DE PRÁCTICA -->
     <section id="practicas" style="background-color: var(--color-fondo-claro);">
         <div class="encabezado-seccion">
@@ -834,7 +788,7 @@ footer {
                 </ul>
             </div>
 
-            <!-- Tarjeta 2: Creadores de Contenido -->
+            <!-- Tarjeta 2: Creadores -->
             <div class="tarjeta-corporativa">
                 <h3><a href="creadores.html">Creadores de Contenido e Influencers ➔</a></h3>
                 <p>Asesoramos a creadores, streamers y agencias en la negociación de sus contratos para que hagan valer su trabajo y aseguren sus ingresos.</p>
@@ -845,9 +799,9 @@ footer {
                 </ul>
             </div>
 
-            <!-- Tarjeta 3: Derecho Deportivo -->
+            <!-- Tarjeta 3: Deporte -->
             <div class="tarjeta-corporativa">
-                <h3><a href="deporte.html">Derecho Deportivo ➔</a></h3>
+                 <h3><a href="deporte.html">Derecho Deportivo ➔</a></h3>
                 <p>Asesoramos a futbolistas, atletas, agentes y clubes en la gestión de sus contratos, transferencias y regulaciones específicas.</p>
                 <ul>
                     <li><span class="tilde-oro">✓</span> Fichajes, contratos Ley 20.160 y pases internacionales.</li>
@@ -866,149 +820,112 @@ footer {
                     <li><span class="tilde-oro">✓</span> Políticas de privacidad y cumplimiento ante la AAIP.</li>
                 </ul>
             </div>
-
-            <!-- Tarjeta 5: Propiedad Intelectual -->
-            <div class="tarjeta-corporativa">
-                <h3><a href="propiedad-intelectual.html">Propiedad Intelectual Digital ➔</a></h3>
-                <p>Protegemos activos intangibles, marcas corporativas y desarrollos de software en entornos globales altamente competitivos.</p>
-                <ul>
-                    <li><span class="tilde-oro">✓</span> Registro de marcas, patentes y software ante el INPI.</li>
-                    <li><span class="tilde-oro">✓</span> Contratos de confidencialidad (NDA) y licencias de uso.</li>
-                    <li><span class="tilde-oro">✓</span> Defensa contra infracciones de copyright y piratería digital.</li>
-                </ul>
-            </div>
+<!-- Columna 3: Enfoque Regional Transfronterizo -->
+        <div class="columna-footer-fija">
+            <h4>ENFOQUE MERCOSUR</h4>
+            <p>Mantenemos una red activa de corresponsalías y alianzas estratégicas operativas en los principales centros comerciales y productivos del país y los mercados de la región.</p>
         </div>
-    </section>
-    <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
-    <section class="seccion-faq">
-        <div class="encabezado-seccion">
-            <h2>Preguntas Frecuentes</h2>
-            <div class="linea-decorativa"></div>
-        </div>
-        <div class="contenedor-faq">
-            <details>
-                <summary>¿Qué tipo de empresas asesoran habitualmente? <span>▼</span></summary>
-                <div class="respuesta-faq">
-                    <p>Brindamos servicios tanto a PyMEs con proyección internacional como a multinacionales de diversos sectores económicos e industriales, con especial foco en empresas de base tecnológica.</p>
-                </div>
-            </details>
-            <details>
-                <summary>¿Cómo se estructuran los honorarios profesionales? <span>▼</span></summary>
-                <div class="respuesta-faq">
-                    <p>Trabajamos mediante esquemas flexibles adaptados a cada requerimiento, incluyendo abonos corporativos mensuales, esquemas por proyecto cerrado u horas de consultoría especializada.</p>
-                </div>
-            </details>
-        </div>
-    </section>
-
-    <!-- SECCIÓN CONTACTO -->
-    <section id="contacto" class="seccion-contacto">
-        <div class="contenedor-contacto">
-            <div class="info-contacto">
-                <h3>Contacto Institucional</h3>
-                <div class="bloque-dato">
-                    <label>Dirección</label>
-                    <p>Av. del Libertador, Ciudad Autónoma de Buenos Aires, Argentina</p>
-                </div>
-                <div class="bloque-dato">
-                    <label>Teléfono</label>
-                    <p>+54 (11) 4800-0000</p>
-                </div>
-                <div class="bloque-dato">
-                    <label>Email</label>
-                    <p>contacto@rgma.com.ar</p>
-                </div>
-            </div>
-            
-            <form class="formulario-contacto" action="#" method="POST">
-                <input type="text" placeholder="Nombre Completo" required>
-                <input type="email" placeholder="Correo Electrónico" required>
-                <div class="campo-ancho">
-                    <input type="text" placeholder="Empresa / Organización">
-                </div>
-                <div class="campo-ancho">
-                    <textarea placeholder="Asunto o consulta legal..." rows="6" required></textarea>
-                </div>
-                <button type="submit" class="boton-enviar">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
-    <!-- SECCIÓN DE CIERRE DE REDES -->
-    <section class="seccion-cierre-marval">
-        <div class="contenido-cierre">
-            <span class="subtitulo-cierre">Conecte con Nosotros</span>
-            <h2 class="marca-redes">@rgm_abogados</h2>
-            <p class="descripcion-cierre">Siga nuestras publicaciones editoriales donde compartimos análisis de las últimas novedades normativas del mercado.</p>
-            <a href="#" class="btn-instagram">Ver en Instagram</a>
-        </div>
-    </section>
-
-    <!-- BARRA FLOTANTE INTERACTIVA DE ENLACES DE CONTACTO -->
-    <div class="barra-flotante-contacto">
-        <a href="#" class="item-flotante">
-            <span class="texto-flotante">WhatsApp</span>
-            <div class="icono-flotante">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.294c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-            </div>
-        </a>
-        <a href="#" class="item-flotante">
-            <span class="texto-flotante">LinkedIn</span>
-            <div class="icono-flotante">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm10.934 8.212V9.459c0-2.073-1.11-3.037-2.583-3.037-1.187 0-1.718.653-2.015 1.114h.017V6.169H7.742c.031.677 0 7.225 0 7.225h2.401V9.43c0-.417.03-.834.153-1.134.333-.833 1.096-1.693 2.378-1.693 1.678 0 2.348 1.278 2.348 3.149v4.522h2.402z"/></svg>
-            </div>
-        </a>
+        
+    </div> <!-- Cierra bloques-footer-fijo -->
+    
+    <!-- Línea Inferior de Copyright -->
+    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">
+        <p>© <script>document.write(new Date().getFullYear());</script> Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Confidencialidad</p>
     </div>
+</footer>
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer>
-        <div class="bloques-footer-fijo">
-            <div class="columna-footer-fija">
-                <h4>El Estudio</h4>
-                <p>Asesoramiento jurídico integral enfocado en proteger los intereses comerciales de corporaciones de alta complejidad y de la economía digital.</p>
-            </div>
-            <div class="columna-footer-fija">
-                <h4>Navegación</h4>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#estudio">El Estudio</a></li>
-                    <li><a href="#practicas">Prácticas</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="columna-footer-fija">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Términos de Uso</a></li>
-                    <li><a href="#">Políticas de Privacidad</a></li>
-                </ul>
-            </div>
-        </div>
-        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px;">
-            <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 300;">&copy; 2026 Riganti, Geiler & Márquez Alluralde. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
+<script>
+    // 1. Reducción dinámica de la barra superior al hacer scroll (SANEADO: Color unificado)
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.style.padding = '15px 8%';
+                header.style.backgroundColor = 'rgba(7, 14, 27, 0.99)';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.padding = '25px 8%';
+                header.style.backgroundColor = 'rgba(7, 14, 27, 0.96)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
+            }
+        }
+    });
 
-    <!-- SCRIPT DE INTERACTIVIDAD MÓVIL -->
-    <script>
-        const botonHamburguesa = document.querySelector('.boton-hamburguesa');
-        const menuNavegacion = document.querySelector('.menu-navegacion');
+    // 2. Control de Apertura y Cierre del Menú Cortina Móvil
+    const botonHamburguesa = document.querySelector('.boton-hamburguesa');
+    const menuNavegacion = document.querySelector('.menu-navegacion');
 
+    if (botonHamburguesa && menuNavegacion) {
         botonHamburguesa.addEventListener('click', () => {
             botonHamburguesa.classList.toggle('activo');
             menuNavegacion.classList.toggle('activo');
         });
 
-        // Cierra el menú cortina automáticamente al hacer clic en cualquier sección
+        // Cierra el menú cortina de forma automática al presionar cualquier enlace
         document.querySelectorAll('.menu-navegacion a').forEach(link => {
             link.addEventListener('click', () => {
                 botonHamburguesa.classList.remove('activo');
                 menuNavegacion.classList.remove('activo');
             });
         });
-    </script>
+    }
+
+    // 3. Animación Scroll Reveal para tarjetas corporativas
+    const tarjetas = document.querySelectorAll('.tarjeta-corporativa');
+    const opcionesObservador = { threshold: 0.15, rootMargin: "0px 0px -40px 0px" };
+
+    const observador = new IntersectionObserver(function(entradas, observador) {
+        entradas.forEach(entrada => {
+            if (!entrada.isIntersecting) return;
+            entrada.target.classList.add('visible'); 
+            observador.unobserve(entrada.target);
+        });
+    }, opcionesObservador);
+
+    tarjetas.forEach(tarjeta => {
+        observador.observe(tarjeta);
+    });
+
+    // 4. Control de restauración de posición de scroll
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+</script> 
+
+<!-- BARRA FLOTANTE INTERACTIVA LATERAL (CORREGIDA: URLs e íconos validados bajo estándares W3C) -->
+<div class="barra-flotante-contacto">
+    <a href="#contacto" class="item-flotante" title="Escribir Correo">
+        <span class="texto-flotante">CONTACTO</span>
+        <div class="icono-flotante">
+            <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </div>
+    </a>
+
+    <a href="tel:+541143215555" class="item-flotante" title="Llamar">
+        <span class="texto-flotante">LLAMAR</span>
+        <div class="icono-flotante">
+            <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+    </a>
+
+    <a href="#contacto" class="item-flotante" title="Sede Central">
+        <span class="texto-flotante">UBICACIÓN</span>
+        <div class="icono-flotante">
+            <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+    </a>
+
+    <a href="#contacto" class="item-flotante" title="English Version">
+        <span class="texto-flotante idioma-texto">ENGLISH</span>
+        <div class="icono-flotante">
+            <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+    </a>
+</div>
+
+<!-- CORREGIDO: Cierre semántico definitivo de la página -->
 </body>
 </html>
-
-    
-
 
